@@ -4,9 +4,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //components
 import Navbar from "./components/Navbar";
 import NewUserForm from "./components/NewUserForm";
-import StatGraph from './components/StatGraph';
+import Steps from './components/Steps';
+import Water from './components/Water';
+import Weight from './components/Weight'
 //pages
-import Home from "./pages/Home";
+import Home from "./pages/Home.js";
 import Index from "./pages/Index";
 import "./App.css";
 function App() {
@@ -29,6 +31,7 @@ function App() {
     <div>
       <Router>
         <Navbar />
+        <Steps />
 
         <div className="App" id="body">
           <Switch>
@@ -49,8 +52,14 @@ function App() {
               <Index healthDetails={formDataFields} />
             </Route>
 
-            <Route path="/:stat">
-              <StatGraph formData={formDataFields}/>
+            <Route path="/steps">
+              <Steps />
+            </Route>
+            <Route path="/water">
+              <Water />
+            </Route>
+            <Route path="/weight">
+              <Weight />
             </Route>
           </Switch>
         </div>

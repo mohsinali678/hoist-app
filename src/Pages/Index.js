@@ -1,4 +1,5 @@
 // import HealthDetails from "../components/HealthDetails.js"
+import { Link } from 'react-router-dom';
 
 function Index({healthDetails}) {
     // const healthDetails={
@@ -21,9 +22,19 @@ function Index({healthDetails}) {
         <div className="Index">
             <h2>{healthDetails.name}'s Health Report</h2>
             <h3>BMI is {BMI(healthDetails.weight, healthDetails.height)}</h3>
-            {/* <HealthDetails healthDetails={healthDetails}/> */}
+            <Link id="link" to="/steps">
+                Steps
+            </Link>
+            {' '}
+            <Link id="link" to="/water">
+                Water
+            </Link>
+            {' '}
+            <Link id="link" to="/weight">
+                Weight
+            </Link>
         </div>
     )
-}
+};
 
 export default Index
