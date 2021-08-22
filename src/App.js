@@ -5,8 +5,8 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import NewUserForm from "./components/NewUserForm";
 //pages
-import Home from "./Pages/Home";
-import Index from "./Pages/Index";
+import Home from "./pages/Home";
+import Index from "./pages/Index";
 function App() {
   const [formDataFields, setFormDataFields] = useState([]);
   const questionnaireData = [
@@ -48,7 +48,7 @@ function App() {
               <Index healthDetails={formDataFields} />
             </Route>
 
-            <Route path="/:stat">{/* StatView */}</Route>
+            <Route path="/:stat"></Route>
           </Switch>
         </div>
       </Router>
