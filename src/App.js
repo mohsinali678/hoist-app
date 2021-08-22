@@ -11,28 +11,12 @@ function App() {
   const [formDataFields, setFormDataFields] = useState([]);
   const questionnaireData = [
     "weight",
-    "weight",
-    "weight",
-    "height",
-    "height",
     "height",
     "sleep amount",
-    "sleep amount",
-    "sleep amount",
-    "water intake",
-    "water intake",
     "water intake",
     "steps",
-    "steps",
-    "steps",
-    "screen time",
-    "screen time",
     "screen time",
     "heart rate",
-    "heart rate",
-    "heart rate",
-    "blood oxygen",
-    "blood oxygen",
     "blood oxygen",
   ];
 
