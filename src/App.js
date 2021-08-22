@@ -1,13 +1,12 @@
-import "./App.css";
 import { useState } from "react";
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 //components
 import Header from './components/Header'
 import Navbar from './components/Navbar'
 import NewUserForm from "./components/NewUserForm";
 //pages
-import Home from './pages/Home'
-import Index from './pages/Index'
+import Home from './Pages/Home'
+import Index from './Pages/Index'
 function App() {
   const [formDataFields, setFormDataFields] = useState([]);
   const questionnaireData = [
@@ -26,44 +25,47 @@ function App() {
   };
   return (
     <div className="App">
-      <Header />
-      <Navbar />
-      
-      <div id='body'>
-        <Switch>
-          <Route
-            exact path='/'
-            component={Home}/>
+      <Router>
+        <Header />
+        <Navbar />
 
-          <Route path='/new-user-form'>
-            <NewUserForm
-              questionnaireData={questionaireData}
-              addFormData={addFormData}/>
-          </Route>
+        <div id='body'>
+          <Switch>
+            <Route
+              exact path='/'
+              component={Home} />
 
-          <Route path='/stat-tracker-form'>
-            {/* statTracker */}
-          </Route>
-
-          <Route path='/meal-log'>
-            {/* MealLog */}
-          </Route>
-
-          <Route
-            exact path='/dashboard'>
-            {/* Index */}
+            <Route path='/new-user-form'>
+              <NewUserForm
+                questionnaireData={questionnaireData}
+                addFormData={addFormData} />
             </Route>
-            
-          
-          <Route
-            path='/:stat' >
-            {/* StatView */}
-            </Route>
-          
-        </Switch>
 
-      </div>
+            <Route path='/stat-tracker-form'>
+              {/* statTracker */}
+            </Route>
+
+            <Route path='/meal-log'>
+              {/* MealLog */}
+            </Route>
+
+            <Route
+              exact path='/dashboard'>
+              <Index healthDetails={formDataFields} />
+            </Route>
+
+
+            <Route
+              path='/:stat' >
+              {/* StatView */}
+            </Route>
+
+          </Switch>
+
+        </div>
+      </Router>
     </div>
+
   );
 }
 
