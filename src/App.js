@@ -8,7 +8,7 @@ import Steps from './components/Steps'
 import Water from './components/Water'
 import Weight from './components/Weight'
 
-import Questionare from "./components/Questionare";
+// import Questionare from "./components/Questionare";
 //pages
 import Home from "./pages/Home.js";
 import Index from "./pages/Index";
@@ -38,7 +38,7 @@ function App() {
         <div className="App" id="body">
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/questionare" component={Questionare} />
+            {/* <Route exact path="/questionare" component={Questionare} /> */}
             <Route path="/new-user-form">
               <NewUserForm
                 questionnaireData={questionnaireData}
