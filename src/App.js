@@ -37,7 +37,7 @@ function App() {
 
           <Route path='/new-user-form'>
             <NewUserForm
-              questionnaireData={questionaireData}
+              questionnaireData={questionnaireData}
               addFormData={addFormData}/>
           </Route>
 
