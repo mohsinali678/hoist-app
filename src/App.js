@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //components
-import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import NewUserForm from "./components/NewUserForm";
 //pages
@@ -12,12 +11,28 @@ function App() {
   const [formDataFields, setFormDataFields] = useState([]);
   const questionnaireData = [
     "weight",
+    "weight",
+    "weight",
+    "height",
+    "height",
     "height",
     "sleep amount",
+    "sleep amount",
+    "sleep amount",
+    "water intake",
+    "water intake",
     "water intake",
     "steps",
+    "steps",
+    "steps",
+    "screen time",
+    "screen time",
     "screen time",
     "heart rate",
+    "heart rate",
+    "heart rate",
+    "blood oxygen",
+    "blood oxygen",
     "blood oxygen",
   ];
 
