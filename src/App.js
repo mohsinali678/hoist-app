@@ -1,7 +1,13 @@
 import "./App.css";
-import NewUserForm from "./components/NewUserForm";
 import { useState } from "react";
-
+import { Route, Switch } from 'react-router-dom';
+//components
+import Header from './components/Header'
+import Navbar from './components/Navbar'
+import NewUserForm from "./components/NewUserForm";
+//pages
+import Home from './pages/Home'
+import Index from './pages/Index'
 function App() {
   const [formDataFields, setFormDataFields] = useState([]);
   const questionnaireData = [
@@ -18,10 +24,43 @@ function App() {
   };
   return (
     <div className="App">
-      <NewUserForm
-        questionnaireData={questionnaireData}
-        addFormData={addFormData}
-      />
+      <Header />
+      <Navbar />
+      
+      <div id='body'>
+        <Switch>
+          <Route
+            exact path='/'
+            component={Home}/>
+
+          <Route path='/new-user-form'>
+            <NewUserForm
+              questionnaireData={questionaireData}
+              addFormData={addFormData}/>
+          </Route>
+
+          <Route path='/stat-tracker-form'>
+            {/* statTracker */}
+          </Route>
+
+          <Route path='/meal-log'>
+            {/* MealLog */}
+          </Route>
+
+          <Route
+            exact path='/dashboard'>
+            {/* Index */}
+            </Route>
+            
+          
+          <Route
+            path='/:stat' >
+            {/* StatView */}
+            </Route>
+          
+        </Switch>
+
+      </div>
     </div>
   );
 }

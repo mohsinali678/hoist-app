@@ -19,7 +19,7 @@ export default function NewUserForm(props) {
       ...formData,
       userDataFields: questionnaireData,
     });
-  }, [questionnaireData]);
+  }, [questionnaireData,formData]);
 
   const handleChange = (e) => {
     setFormData({
