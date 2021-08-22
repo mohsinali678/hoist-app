@@ -12,12 +12,12 @@ function App() {
   const questionnaireData = [
     "weight",
     "height",
-    "sleep amount",
-    "water intake",
+    "sleepAmount",
+    "waterIntake",
     "steps",
-    "screen time",
-    "heart rate",
-    "blood oxygen",
+    "screenTime",
+    "heartRate",
+    "bloodOxygen",
   ];
 
   const addFormData = (formData) => {
@@ -44,7 +44,7 @@ function App() {
             <Route path="/meal-log">{/* MealLog */}</Route>
 
             <Route exact path="/dashboard">
-              <Index healthDetails={formDataFields} />
+              <Index formDataFields={formDataFields} />
             </Route>
 
             <Route path="/:stat"></Route>

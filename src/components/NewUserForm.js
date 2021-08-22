@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from "react";
-import {useHistory} from "react-router-dom"
+import { useHistory } from "react-router-dom";
 
 export default function NewUserForm(props) {
   const { questionnaireData, addFormData } = props;
   const [formData, setFormData] = useState({
-    "name": "",
-    "age": "",
-    "weight": "",
-    "height": "",
-    "sleep amount": "",
-    "water intake": "",
-    "steps": "",
-    "screen time": "",
-    "heart rate": "",
-    "blood oxygen": "",
+    name: "",
+    age: "",
+    weight: "",
+    height: "",
+    sleepAmount: "",
+    waterIntake: "",
+    steps: "",
+    screenTime: "",
+    heartRate: "",
+    bloodOxygen: "",
     userDataFields: [],
   });
 
-  let history = useHistory()
+  let history = useHistory();
 
   useEffect(() => {
     setFormData({
@@ -36,7 +36,7 @@ export default function NewUserForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     addFormData(formData);
-    history.push("/dashboard")
+    history.push("/dashboard");
   };
 
   const textInputs = formData.userDataFields.map((elem, i) => {
@@ -46,7 +46,7 @@ export default function NewUserForm(props) {
         <input
           id={elem}
           name={elem}
-          type="text"
+          type="number"
           value={formData[elem]}
           onChange={handleChange}
           required
@@ -59,27 +59,27 @@ export default function NewUserForm(props) {
     <div className="newPage">
       <h2>New User Form</h2>
       <form onSubmit={handleSubmit} className="newForm">
-          <label htmlFor="name">name:</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <label htmlFor="age">age:</label>
-          <input
-            id="age"
-            name="age"
-            type="text"
-            value={formData.age}
-            onChange={handleChange}
-            required
-          />
-          {textInputs}
-          <br />
-          <input type="submit" />
+        <label htmlFor="name">name:</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor="age">age:</label>
+        <input
+          id="age"
+          name="age"
+          type="number"
+          value={formData.age}
+          onChange={handleChange}
+          required
+        />
+        {textInputs}
+        <br />
+        <input type="submit" />
       </form>
     </div>
   );
