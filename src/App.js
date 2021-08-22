@@ -7,6 +7,7 @@ import NewUserForm from "./components/NewUserForm";
 //pages
 import Home from "./pages/Home";
 import Index from "./pages/Index";
+import "./App.css";
 function App() {
   const [formDataFields, setFormDataFields] = useState([]);
   const questionnaireData = [
@@ -24,12 +25,11 @@ function App() {
     setFormDataFields(formData);
   };
   return (
-    <div className="App">
+    <div>
       <Router>
-        <Header />
         <Navbar />
 
-        <div id="body">
+        <div className="App" id="body">
           <Switch>
             <Route exact path="/" component={Home} />
 

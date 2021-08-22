@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {useHistory} from "react-router-dom"
 
 export default function NewUserForm(props) {
   const { questionnaireData, addFormData } = props;
@@ -15,6 +16,8 @@ export default function NewUserForm(props) {
     "blood oxygen": "",
     userDataFields: [],
   });
+
+  let history = useHistory()
 
   useEffect(() => {
     setFormData({
@@ -33,6 +36,7 @@ export default function NewUserForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     addFormData(formData);
+    history.push("/dashboard")
   };
 
   const textInputs = formData.userDataFields.map((elem, i) => {
