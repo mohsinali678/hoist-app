@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NewUserForm from "./components/NewUserForm";
+import { useState } from "react";
 
 function App() {
+  const [formDataFields, setFormDataFields] = useState([]);
+  const questionnaireData = [
+    "weight",
+    "height",
+    "sleep amount",
+    "water intake",
+    "steps",
+    "screen time",
+  ];
+
+  const addFormData = (formData) => {
+    setFormDataFields(formData);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NewUserForm
+        questionnaireData={questionnaireData}
+        addFormData={addFormData}
+      />
     </div>
   );
 }
