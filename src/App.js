@@ -48,7 +48,7 @@ function App() {
               <Index healthDetails={formDataFields} />
             </Route>
 
-            <Route path="/:stat">{/* StatView */}</Route>
+            <Route path="/:stat"></Route>
           </Switch>
         </div>
       </Router>
