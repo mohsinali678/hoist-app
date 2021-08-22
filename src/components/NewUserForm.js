@@ -51,8 +51,6 @@ export default function NewUserForm(props) {
           onChange={handleChange}
           required
         />
-        <br />
-        <br />
       </React.Fragment>
     );
   });
@@ -70,8 +68,6 @@ export default function NewUserForm(props) {
             onChange={handleChange}
             required
           />
-          <br />
-          <br />
           <label htmlFor="age">age:</label>
           <input
             id="age"
@@ -81,9 +77,8 @@ export default function NewUserForm(props) {
             onChange={handleChange}
             required
           />
-          <br />
-          <br />
           {textInputs}
+          <br />
           <input type="submit" />
       </form>
     </div>
