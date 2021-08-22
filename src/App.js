@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import NewUserForm from "./components/NewUserForm";
 import StatGraph from './components/StatGraph';
+import Questionare from "./components/Questionare";
 //pages
 import Home from "./pages/Home";
 import Index from "./pages/Index";
@@ -33,7 +34,7 @@ function App() {
         <div className="App" id="body">
           <Switch>
             <Route exact path="/" component={Home} />
-
+            <Route exact path="/questionare" component={Questionare} />
             <Route path="/new-user-form">
               <NewUserForm
                 questionnaireData={questionnaireData}
