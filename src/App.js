@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //components
-import Header from './components/Header'
-import Navbar from './components/Navbar'
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import NewUserForm from "./components/NewUserForm";
 //pages
-import Home from './Pages/Home'
-import Index from './Pages/Index'
+import Home from "./Pages/Home";
+import Index from "./Pages/Index";
 function App() {
   const [formDataFields, setFormDataFields] = useState([]);
   const questionnaireData = [
@@ -29,43 +29,30 @@ function App() {
         <Header />
         <Navbar />
 
-        <div id='body'>
+        <div id="body">
           <Switch>
-            <Route
-              exact path='/'
-              component={Home} />
+            <Route exact path="/" component={Home} />
 
-            <Route path='/new-user-form'>
+            <Route path="/new-user-form">
               <NewUserForm
                 questionnaireData={questionnaireData}
-                addFormData={addFormData} />
+                addFormData={addFormData}
+              />
             </Route>
 
-            <Route path='/stat-tracker-form'>
-              {/* statTracker */}
-            </Route>
+            <Route path="/stat-tracker-form">{/* statTracker */}</Route>
 
-            <Route path='/meal-log'>
-              {/* MealLog */}
-            </Route>
+            <Route path="/meal-log">{/* MealLog */}</Route>
 
-            <Route
-              exact path='/dashboard'>
+            <Route exact path="/dashboard">
               <Index healthDetails={formDataFields} />
             </Route>
 
-
-            <Route
-              path='/:stat' >
-              {/* StatView */}
-            </Route>
-
+            <Route path="/:stat">{/* StatView */}</Route>
           </Switch>
-
         </div>
       </Router>
     </div>
-
   );
 }
 
