@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useHistory } from 'react-router-dom';
 
 export default function NewUserForm(props) {
   const { questionnaireData, addFormData } = props;
@@ -19,7 +20,7 @@ export default function NewUserForm(props) {
       ...formData,
       userDataFields: questionnaireData,
     });
-  }, [questionnaireData]);
+  }, [questionnaireData,formData]);
 
   const handleChange = (e) => {
     setFormData({
