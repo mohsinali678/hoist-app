@@ -15,7 +15,7 @@ function Index({healthDetails}) {
 
 
       const BMI = (weight,height) => {
-        return Math.ceil(weight/height*height)
+        return Math.ceil(weight/height**2 * 703)
     }
     return (
         <div className="Index">
