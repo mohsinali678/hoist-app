@@ -5,6 +5,9 @@ const Navbar = () => {
         <div>
             <ul>
                 <li>
+                    <Link to='/new-user-form'>Enter Your Health Details</Link>
+                </li>
+                <li>
                     <Link>Dashboard</Link>
                 </li>
                 <li>

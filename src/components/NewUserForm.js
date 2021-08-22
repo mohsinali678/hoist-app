@@ -21,7 +21,7 @@ export default function NewUserForm(props) {
       ...formData,
       userDataFields: questionnaireData,
     });
-  }, [questionnaireData,formData]);
+  }, [questionnaireData]);
 
   const handleChange = (e) => {
     setFormData({
