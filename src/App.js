@@ -27,7 +27,6 @@ function App() {
   return (
     <div>
       <Router>
-        <Header />
         <Navbar />
 
         <div className="App" id="body">

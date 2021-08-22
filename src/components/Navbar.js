@@ -1,27 +1,29 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import Header from "../components/Header.js";
+import { Link } from "react-router-dom";
 const Navbar = () => {
-    return (
-        <div>
-            <ul>
-                <li>
-                    <Link to='/new-user-form'>Enter Your Health Details</Link>
-                </li>
-                <li>
-                    <Link>Dashboard</Link>
-                </li>
-                <li>
-                    <Link>Meal Log</Link>
-                </li>
-                <li>
-                    <Link>Custom Trackers</Link>
-                </li>
-                <li>
-                    <Link>Contact Us</Link>
-                </li>
-            </ul>
-        </div>
-    )
-}
+  return (
+    <div>
+      <nav className="navBar">
+        <Link id="link" to="/">
+          <Header />
+        </Link>
+        <Link id="link" to="/new-user-form">
+          Enter Your Health Details
+        </Link>
 
-export default Navbar
+        <Link id="link" to="/dashboard">
+          Dashboard
+        </Link>
+
+        <Link id="link">Meal Log</Link>
+
+        <Link id="link">Custom Trackers</Link>
+
+        <Link id="link">Contact Us</Link>
+      </nav>
+    </div>
+  );
+};
+
+export default Navbar;
