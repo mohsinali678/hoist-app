@@ -17,6 +17,8 @@ function App() {
     "water intake",
     "steps",
     "screen time",
+    "heart rate",
+    "blood oxygen",
   ];
 
   const addFormData = (formData) => {
