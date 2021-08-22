@@ -1,10 +1,10 @@
-<<<<<<< HEAD
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-=======
-import "./App.css";
 import NewUserForm from "./components/NewUserForm";
 import { useState } from "react";
->>>>>>> dd06d818c9d9021f4772229bf29c6831f2dd7df5
+
+
+//Pages
+import Index from "./Pages/Index";
 
 function App() {
   const [formDataFields, setFormDataFields] = useState([]);
@@ -22,34 +22,16 @@ function App() {
   };
   return (
     <div className="App">
-<<<<<<< HEAD
       <Router>
-        <NavBar />
+        <Index healthDetails={formDataFields} />
 
-        <main>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
+        
+        <NewUserForm
+          questionnaireData={questionnaireData}
+          addFormData={addFormData}
+        />
 
-            <Route exact path="/healthDetails">
-              <Index healthDetails={healthDetails} />
-            </Route>
-
-            <Route path="*">
-              <FourOFour />
-            </Route>
-          </Switch>
-        </main>
-
-        <FootBar />
       </Router>
-=======
-      <NewUserForm
-        questionnaireData={questionnaireData}
-        addFormData={addFormData}
-      />
->>>>>>> dd06d818c9d9021f4772229bf29c6831f2dd7df5
     </div>
   );
 }
