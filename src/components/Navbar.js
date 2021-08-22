@@ -8,6 +8,9 @@ const Navbar = () => {
         <Link id="link" to="/">
           <Header />
         </Link>
+        <Link id="questionare" to="/questionare">
+          Questionnare
+        </Link>
         <Link id="link" to="/new-user-form">
           Enter Your Health Details
         </Link>
